@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Quote Generator</title>
+</head>
+<body>
+  <h1>Dynamic Quote Generator</h1>
+
+  <!-- عرض الكوت -->
+  <div id="quoteDisplay"></div>
+
+  <!-- زر باش يبدّل الكوت -->
+  <button id="newQuote">Show New Quote</button>
+
+  <!-- فورم ديال إضافة كوت جديد -->
+  <div style="margin-top: 20px;">
+    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
+    <button id="addQuote">Add Quote</button>
+  </div>
+
+  <!-- عرض الكاتيجوريز -->
+  <div style="margin-top: 20px;">
+    <label for="categorySelect">Choose category:</label>
+    <select id="categorySelect">
+      <option value="all">All</option>
+    </select>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
