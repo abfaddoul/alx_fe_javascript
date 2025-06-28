@@ -4,29 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dynamic Quote Generator</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Dynamic Quote Generator</h1>
+  <div class="container">
+    <h1>Dynamic Quote Generator</h1>
 
-  <!-- عرض الكوت -->
-  <div id="quoteDisplay"></div>
+    <div class="stats" id="stats">
+      <div class="stat-item">
+        <div class="stat-number" id="totalQuotes">0</div>
+        <div class="stat-label">Total Quotes</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="totalCategories">0</div>
+        <div class="stat-label">Categories</div>
+      </div>
+    </div>
 
-  <!-- زر باش يبدّل الكوت -->
-  <button id="newQuote">Show New Quote</button>
+    <div class="category-filter" id="categoryFilter">
+      <button class="category-btn active" data-category="all">All Categories</button>
+    </div>
 
-  <!-- فورم ديال إضافة كوت جديد -->
-  <div style="margin-top: 20px;">
-    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
-    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-    <button id="addQuote">Add Quote</button>
-  </div>
+    <div id="quoteDisplay">
+      <div class="quote-text">Welcome to the Dynamic Quote Generator!</div>
+      <div class="quote-category">Click "Show New Quote" to begin</div>
+    </div>
 
-  <!-- عرض الكاتيجوريز -->
-  <div style="margin-top: 20px;">
-    <label for="categorySelect">Choose category:</label>
-    <select id="categorySelect">
-      <option value="all">All</option>
-    </select>
+    <div class="controls">
+      <button id="newQuote">Show New Quote</button>
+      <button id="toggleForm">Add New Quote</button>
+      <button id="exportQuotes">Export Quotes</button>
+      <button id="importQuotes">Import Quotes</button>
+    </div>
+
+    <div class="add-quote-form" id="addQuoteForm">
+      <h3 style="margin-bottom: 20px; color: #333;">Add a New Quote</h3>
+      <div class="form-group">
+        <label for="newQuoteText">Quote Text:</label>
+        <textarea id="newQuoteText" placeholder="Enter your inspiring quote here..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="newQuoteCategory">Category:</label>
+        <input type="text" id="newQuoteCategory" placeholder="e.g., Motivation, Wisdom, Life">
+      </div>
+      <div class="form-group">
+        <label for="newQuoteAuthor">Author (optional):</label>
+        <input type="text" id="newQuoteAuthor" placeholder="Quote author">
+      </div>
+      <div class="controls">
+        <button onclick="addQuote()">Add Quote</button>
+        <button onclick="cancelAddQuote()" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);">Cancel</button>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
